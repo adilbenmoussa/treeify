@@ -1,3 +1,4 @@
+// Change the used icons into normal utf-8 symbols 
 //     treeify.js
 //     Luke Plaster <notatestuser@gmail.com>
 //     https://github.com/notatestuser/treeify.js
@@ -16,11 +17,11 @@
 }(this, function() {
 
   function makePrefix(key, last) {
-    var str = (last ? '└' : '├');
+    var str = (last ? '|' : '|-');
     if (key) {
-      str += '─ ';
+      str += '-- ';
     } else {
-      str += '──┐';
+      str += '--- ';
     }
     return str;
   }
@@ -49,7 +50,7 @@
       // we need to append either blankness or a branch to our line
       lastStates.forEach(function(lastState, idx) {
         if (idx > 0) {
-          line += (lastState[1] ? ' ' : '│') + '  ';
+          line += (lastState[1] ? ' ' : '|') + '  ';
         }
         if ( ! circular && lastState[0] === root) {
           circular = true;
